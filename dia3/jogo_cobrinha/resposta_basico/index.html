@@ -29,6 +29,8 @@
         let food = { x: Math.floor(Math.random() * 20) * box, y: Math.floor(Math.random() * 20) * box }; // Posição inicial da comida
         let score = 0;
         let d; // Direção
+        let scoreText = "Score"
+        
 
         // Controles da cobra
         document.addEventListener("keydown", direction);
@@ -48,7 +50,10 @@
         // Função para desenhar tudo na tela
         function draw() {
             
-            if (paused) { return }
+            if (paused) { 
+                ctx.fillText(scoreText + ": " + score + "   PAUSE ", box, box);
+                return 
+            }
 
             // Limpa o canvas a cada frame
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -90,6 +95,9 @@
                 y: snakeY
             };
 
+            // Adiciona nova cabeça à frente
+            
+
             // Game over
             if (
                 snakeX < 0 ||
@@ -97,17 +105,20 @@
                 snakeX >= canvas.width ||
                 snakeY >= canvas.height ||
                 collision(newHead, snake)
+  
             ) {
+
                 clearInterval(game);
+                
             }
 
-            // Adiciona nova cabeça à frente
             snake.unshift(newHead);
+            
 
             // Desenha a pontuação
             ctx.fillStyle = "black";
             ctx.font = "20px Arial";
-            ctx.fillText("Score: " + score, box, box);
+            ctx.fillText(scoreText + ": " + score, box, box);
         }
 
         // Verifica se houve colisão
@@ -123,6 +134,7 @@
         // Função para pausar o jogo
         function pauseGame() {
             paused = !paused;
+
         }
 
 
@@ -135,6 +147,7 @@
             score = 0;
             d = undefined; // Resetar direção
             paused = false; // Garantir que o jogo não esteja pausado
+            game = setInterval(draw, 100);
         }
 
         // Atualiza o jogo a cada 100ms
