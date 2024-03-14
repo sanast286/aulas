@@ -14,9 +14,13 @@
 </head>
 <body>
     <canvas id="snakeCanvas" width="400" height="400"></canvas>
-
+    <button onclick="pauseGame()">Pause</button>
+    <button onclick="restartGame()">Nova Partida</button>
     <script>
         // Definindo variáveis
+        
+        // Variável para controlar se o jogo está pausado
+        let paused = false;
         const canvas = document.getElementById("snakeCanvas");
         const ctx = canvas.getContext("2d");
         const box = 20;
@@ -43,6 +47,9 @@
 
         // Função para desenhar tudo na tela
         function draw() {
+            
+            if (paused) { return }
+
             // Limpa o canvas a cada frame
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -111,6 +118,23 @@
                 }
             }
             return false;
+        }
+
+        // Função para pausar o jogo
+        function pauseGame() {
+            paused = !paused;
+        }
+
+
+        // Função para começar uma nova partida
+        function restartGame() {
+            // Reinicialize as variáveis do jogo
+            snake = [];
+            snake[0] = { x: 10 * box, y: 10 * box };
+            food = { x: Math.floor(Math.random() * 20) * box, y: Math.floor(Math.random() * 20) * box };
+            score = 0;
+            d = undefined; // Resetar direção
+            paused = false; // Garantir que o jogo não esteja pausado
         }
 
         // Atualiza o jogo a cada 100ms
