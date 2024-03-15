@@ -19,12 +19,17 @@ var nome = "João"; // String
 console.log(nome);
 
 
+const naoMuda = 'Nova string'
+
+
+
+
 // Tentativa de alterar o valor de uma constante gera erro
 // aprovado = false; // Isso resultará em um erro
 
 
 // Tipo String
-let nome = "Alice";
+let nome = "Alice"; 
 console.log("String:", nome);
 
 // Tipo Number
