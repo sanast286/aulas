@@ -1,0 +1,259 @@
+Aula 4
+Básico de HTML
+
+Conteúdo da Aula:
+1. Introdução ao HTML (1 minuto):
+O que é HTML? Linguagem de marcação que define a estrutura e o conteúdo de uma página web.
+Importância do HTML: Base para a criação de websites e aplicações web.
+
+Exemplo de código HTML:
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Minha primeira página web</title>
+</head>
+<body>
+  <h1>Olá, mundo!</h1>
+  <p>Este é um parágrafo.</p>
+</body>
+</html>
+
+
+
+2. Estrutura Básica (2 minutos):
+Tags HTML: Elementos que definem o conteúdo e a formatação da página.
+Elementos principais: <!DOCTYPE html>, <html>, <head>, <title>, <body> e </html>.
+Conteúdo do head: Título da página e informações meta.
+Conteúdo do body: Título, parágrafos, imagens, links e outros elementos visíveis.
+
+
+3. Elementos Essenciais (2 minutos):
+Títulos (<h1>, <h2>, etc.): Definir títulos e subtítulos.
+Parágrafos (<p>): Formatar texto em parágrafos.
+Imagens (<img>): Inserir imagens na página.
+Links (<a>): Criar links para outras páginas ou recursos.
+Listas (<ul> e <ol>): Criar listas ordenadas e não ordenadas.
+4. Exemplo Prático (1 minuto):
+Criação de uma página web simples com título, parágrafo, imagem e link.
+Demonstração do código HTML e do resultado visual na página.
+Recursos Adicionais:
+Tutoriais de HTML no W3Schools: https://www.w3schools.com/html/default.asp
+
+
+
+Exercício:
+Crie uma página web simples sobre você, incluindo:
+
+Seu nome e sobrenome
+Uma foto sua
+Um breve texto sobre você
+Um link para seu perfil em uma rede social
+
+
+Formulários:
+
+
+
+1. Introdução aos Formulários HTML:
+
+O que são formulários? Ferramentas para coletar informações do usuário em uma página web.
+Elementos de um formulário: Campos de entrada (texto, checkbox, radio button, select), botões e outros elementos.
+Criação de formulários: Estrutura básica de um formulário HTML com tags form e elementos de entrada.
+
+2. Campos de Entrada e seus Atributos :
+
+Tipos de campos: Text, checkbox, radio button, select, textarea e outros.
+Atributos importantes: name, type, value, placeholder, required e outros.
+Exemplos de uso: Coletar nome, e-mail, sexo, opções de escolha e comentários do usuário.
+
+3. Botões e Ações :
+
+Botões de envio: submit para enviar os dados do formulário.
+Botões de reset: reset para limpar os dados do formulário.
+Ações após o envio: Redirecionar para outra página, enviar e-mail ou processar dados no servidor.
+
+
+
+5. Exemplo Prático :
+
+Criação de um formulário de contato com campos de nome, e-mail, mensagem e botão de envio.
+Validação básica de campos obrigatórios.
+Envio de dados para uma página de agradecimento após o envio.
+Recursos Adicionais:
+
+
+Exercício:
+
+Crie um formulário de inscrição para um evento com os seguintes campos:
+
+Nome completo
+E-mail
+Telefone
+Data de nascimento
+Sexo (opções de escolha)
+Área de interesse (opções de escolha)
+Mensagem (opcional)
+Valide os campos obrigatórios (nome, e-mail) e personalize o layout do formulário com CSS.
+
+
+JavaScript com Formulários
+
+1. Compreendendo Eventos
+O que são eventos?
+
+Eventos são ações que o usuário realiza em uma página web, como cliques, movimentos do mouse e pressionamentos de teclas. Eles permitem que as páginas web respondam às interações do usuário e criem interfaces dinâmicas e interativas.
+
+Exemplos de eventos:
+
+Clique em um botão
+Movimento do mouse sobre uma imagem
+Preenchimento de um campo de formulário
+Envio de um formulário
+Pressionamento da tecla Enter
+Tipos de eventos:
+
+Existem diversos tipos de eventos em JavaScript, cada um com sua função específica. Alguns dos tipos mais comuns são:
+
+Clique (click): Ocorre quando o usuário clica em um elemento.
+Movimento do mouse sobre (mouseover): Ocorre quando o mouse do usuário passa sobre um elemento.
+Movimento do mouse fora (mouseout): Ocorre quando o mouse do usuário sai de um elemento.
+Envio (submit): Ocorre quando o usuário envia um formulário.
+Mudança (change): Ocorre quando o valor de um elemento é alterado.
+Foco (focus): Ocorre quando um elemento recebe o foco do usuário.
+Perda de foco (blur): Ocorre quando um elemento perde o foco do usuário.
+2. Capturando Eventos
+Para interagir com os eventos, você precisa capturá-los e associar uma função JavaScript a eles. Isso pode ser feito de duas maneiras:
+
+1. Usando atributos HTML:
+
+Adicione o atributo onclick ao elemento que você deseja capturar o evento.
+O valor do atributo deve ser o nome da função JavaScript que será executada quando o evento ocorrer.
+Exemplo:
+
+HTML
+<button onclick="minhaFuncao()">Clique aqui</button>
+----------------
+2. Usando o método addEventListener:
+
+O método addEventListener permite que você capture eventos em qualquer elemento da página.
+O primeiro parâmetro é o tipo de evento que você deseja capturar.
+O segundo parâmetro é a função JavaScript que será executada quando o evento ocorrer.
+Exemplo:
+
+JavaScript
+const botao = document.querySelector("button");
+
+botao.addEventListener("click", function() {
+  alert("Você clicou no botão!");
+});
+----------------
+3. Exemplos Práticos
+1. Adicionar animação ao clicar em um botão:
+
+HTML
+<button onclick="animar()">Clique aqui</button>
+----------------
+JavaScript
+function animar() {
+  const elemento = document.querySelector("#elemento");
+  elemento.classList.add("animacao");
+
+  setTimeout(function() {
+    elemento.classList.remove("animacao");
+  }, 1000);
+}
+----------------
+
+
+2. Mostrar/ocultar um elemento ao passar o mouse:
+
+HTML
+<div onmouseover="mostrar()" onmouseout="esconder()">
+  Este elemento será mostrado/escondido
+</div>
+----------------
+JavaScript
+function mostrar() {
+  document.querySelector("#elemento").style.display = "block";
+}
+
+function esconder() {
+  document.querySelector("#elemento").style.display = "none";
+}
+----------------
+
+
+3. Validar um campo de formulário:
+
+HTML
+<input type="text" onchange="validar()">
+----------------
+JavaScript
+function validar() {
+  const campo = document.querySelector("#campo");
+  const valor = campo.value;
+
+  if (valor === "") {
+    alert("O campo não pode estar vazio!");
+  } else if (!isNaN(valor)) {
+    alert("O campo deve conter apenas letras!");
+  }
+}
+----------------
+4. Exercícios
+Crie um botão que muda de cor quando o usuário clica nele.
+Crie um elemento que mostra uma mensagem quando o usuário passa o mouse sobre ele.
+Crie um campo de formulário que só aceita números.
+Crie um formulário que valida o nome e o e-mail do usuário antes de enviar.
+
+
+Banco de Dados
+1. Desvendando os Bancos de Dados :
+
+O que é um banco de dados? Um sistema para armazenar e organizar grandes quantidades de dados de forma eficiente.
+Tipos de bancos de dados: Relacionais (MySQL, PostgreSQL), NoSQL (MongoDB, Cassandra), etc.
+Terminologia básica: Tabela, coluna, registro, chave primária, chave estrangeira, consulta, etc.
+
+2. Explorando o MySQL :
+
+O que é o MySQL? Um SGBD relacional popular e de código aberto.
+Características: Alta performance, escalabilidade, confiabilidade e segurança.
+Utilização: Armazenar dados de websites, aplicações web, sistemas de informação e muito mais.
+
+
+3. Conectando-se ao MySQL com Node.js:
+
+O que é Node.js? Ambiente de tempo de execução para JavaScript que permite a criação de aplicações do lado do servidor.
+Biblioteca mysql: Facilita a conexão ao MySQL, a execução de consultas e a manipulação de dados.
+Exemplo de código:
+JavaScript
+const mysql = require('mysql');
+
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'mydb'
+});
+
+connection.connect();
+
+// Executar consulta
+connection.query('SELECT * FROM users', (error, results) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log(results);
+  }
+});
+
+connection.end();
+Use o código com cuidado.
+
+4. Atividade Prática :
+
+Criar um banco de dados MySQL com uma tabela de usuários.
+Inserir alguns registros na tabela.
+Conectar-se ao banco de dados com Node.js e recuperar os registros da tabela.
+
