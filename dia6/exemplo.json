@@ -1,13 +1,16 @@
 [
     {
+        "id": 1,
         "nome": "Emerson",
         "cidade": "Santo André"
     },
     {
+        "id": 2,
         "nome": "Joao",
         "cidade": "Santo André"
     },
     {
+        "id": 3,
         "nome": "Maria",
         "cidade": "Santos"
     }
