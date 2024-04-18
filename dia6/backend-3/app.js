@@ -1,7 +1,5 @@
 // LEMBRETE:  Executem a instalação do express ' npm install express cors '
 const express =  require('express');
-const cors =  require('cors');
-
 
 const PORT = 4001;
 
