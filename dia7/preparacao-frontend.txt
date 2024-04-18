@@ -1,0 +1,23 @@
+Para instalar o Vue Cli na maquina, no terminal execute este comando:
+        "npm install -g @vue/cli"
+
+
+Criar projeto frontend
+Na pasta que for criar o projeto de frontend Vue executar este comando:
+
+        vue create meu-primeirop-rojeto-vue
+
+    Se for criar pelo modo grafico executar:
+
+        vue ui
+
+   *Em ambos os casos selecionar Vue 3 , babel e eslin 
+
+
+   Para funcionar melhor no Codespaces do GitHub, no arquivo package.json na linha de scripts do serve,
+   inserir "--mode production", vai mudar
+          de:  "serve": "vue-cli-service serve  ,
+        para:  "serve": "vue-cli-service serve  --mode production",
+
+
+    
