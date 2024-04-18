@@ -29,7 +29,6 @@ export default {
     name: 'CrudPage',
     data() {
         return {
-            
             pessoaForm:{nome:'', idade: ''},
             pessoas:[]
         }
