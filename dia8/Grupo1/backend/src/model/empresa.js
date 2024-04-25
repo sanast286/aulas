@@ -18,4 +18,4 @@ const Empresa = sequelize.define('Empresa', {
   timestamps: false
 });
 
-module.export = Empresa;
+module.exports = Empresa;
