@@ -1,11 +1,11 @@
-const Empresa = require('../model/empresa')
-//empresa 
+const Paciente = require('../model/paciente')
+//Pacientes
 
-const EmpresaController = {
+const PacienteController = {
     async listar(req, res) {
         try {
-            const empresas = await Empresa.findAll();
-            return res.status(200).json(empresas);
+            const pacientes = await Paciente.findAll();
+            return res.status(200).json(pacientes);
           } catch (error) {
             return res.status(400).json({ error: error.message });
           }
@@ -15,13 +15,13 @@ const EmpresaController = {
     async obter(req, res) {
         try {
             const { id } = req.params;
-            const empresa = await Empresa.findByPk(id);
+            const paciente = await Paciente.findByPk(id);
       
-            if (!empresa) {
-              return res.status(404).json({ error: 'Empresa não encontrada' });
+            if (!paciente) {
+              return res.status(404).json({ error: 'Paciente não encontrado' });
             }
       
-            return res.status(200).json(empresa);
+            return res.status(200).json(paciente);
           } catch (error) {
             return res.status(400).json({ error: error.message });
           }
@@ -29,8 +29,8 @@ const EmpresaController = {
 
     async criar(req, res) {
         try {
-            const empresa = await Empresa.create(req.body);
-            return res.status(201).json(empresa);
+            const paciente = await Paciente.create(req.body);
+            return res.status(201).json(paciente);
           } catch (error) {
             return res.status(400).json({ error: error.message });
           }
@@ -38,13 +38,13 @@ const EmpresaController = {
     async apagar(req, res) {
         try {
             const { id } = req.params;
-            const deleted = await Empresa.destroy({ where: { id: id } });
+            const deleted = await Paciente.destroy({ where: { id: id } });
       
             if (deleted) {
-              return res.status(204).send("Empresa deletada com sucesso.");
+              return res.status(204).send("Paciente deletado com sucesso.");
             }
       
-            throw new Error('Empresa não encontrada');
+            throw new Error('Paciente não encontrado');
           } catch (error) {
             return res.status(400).json({ error: error.message });
           }
@@ -52,4 +52,5 @@ const EmpresaController = {
 
     }
 }
-module.exports = EmpresaController;
+
+module.exports = PacienteController;
