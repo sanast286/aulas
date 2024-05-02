@@ -1,7 +1,7 @@
-// LEMBRETE:  Executem a instalação das dependencias ' npm install express cors sqlite3 sequelize  '
+    // LEMBRETE:  Executem a instalação das dependencias ' npm install express cors sqlite3 sequelize  '
 const express =  require('express')
-const sequelize = require('./src/sequelize')
-const router = require('./src/rotas')
+const sequelize = require('./sequelize')
+const router = require('./rota')
 
 
 const PORT = 4001;

@@ -3,11 +3,15 @@ const Empresa = require('../model/empresa')
 //Empresas
 
 const EmpresaController = {
-    listar(req, res) {
-        res.status(200).json(empresas);
-
-    },
-
+    async listar(req, res) {
+    try {
+        const empresas = await Empresa.findAll();
+        return res.status(200).json(empresas);
+      } catch (error) {
+        return res.status(400).json({ error: error.message });
+      }
+    }
+,
     obter(req, res) {
         const { id } = req.params;
         res.status(200).json(empresas.filter(empresa => empresa.id === parseInt(id)))
