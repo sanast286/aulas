@@ -1,0 +1,6 @@
+Endereço do Backend
+https://futurocodebackend-ureotn5zxq-uc.a.run.app/
+
+
+Endereço do Swagger Backend
+https://futurocodebackend-ureotn5zxq-uc.a.run.app/api-docs/
